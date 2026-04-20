@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habit Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Mis Habitos</h1>
+      <p id="date-label"></p>
+    </header>
+
+    <!-- In-app reminder banner -->
+    <div id="reminder-banner" class="banner hidden">
+      <span id="banner-text"></span>
+    </div>
+
+    <!-- Progress -->
+    <section class="progress-section">
+      <div class="progress-info">
+        <span id="progress-label">0 de 0 completados</span>
+      </div>
+      <div class="progress-bar"><div id="progress-fill"></div></div>
+    </section>
+
+    <!-- Today's habits -->
+    <section>
+      <h2>Hoy</h2>
+      <ul id="today-list" class="habit-list"></ul>
+    </section>
+
+    <!-- All habits management -->
+    <section>
+      <h2>Gestionar habitos</h2>
+      <button id="btn-add" class="btn btn-primary">+ Nuevo habito</button>
+      <ul id="habits-list" class="habit-list"></ul>
+    </section>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <h3 id="modal-title">Nuevo habito</h3>
+      <form id="habit-form">
+        <input type="hidden" id="habit-id" />
+        <label>Nombre *
+          <input type="text" id="habit-name" required />
+        </label>
+        <label>Descripcion
+          <input type="text" id="habit-desc" />
+        </label>
+        <label>Frecuencia
+          <select id="habit-freq">
+            <option value="daily">Diaria</option>
+            <option value="weekly">Semanal</option>
+          </select>
+        </label>
+        <label>Hora recordatorio (email)
+          <input type="time" id="habit-time" />
+        </label>
+        <div class="modal-actions">
+          <button type="button" id="btn-cancel" class="btn">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
